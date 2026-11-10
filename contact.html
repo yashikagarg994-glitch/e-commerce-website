@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Clothing Store</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #faf7ff;
+    color: #30263c;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 6%;
+    background: #faf7ff;
+    border-bottom: 1px solid #e4d7f2;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #9273b8;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #30263c;
+    font-size: 17px;
+}
+
+nav a:hover,
+nav .active {
+    color: #9273b8;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 75px 8%;
+    background: #eee5fa;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: #9273b8;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
+    color: #6c6176;
+}
+
+/* Contact Layout */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 35px;
+    padding: 65px 8%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+/* Contact Information */
+.contact-info {
+    background: #eee5fa;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-info > p {
+    color: #6c6176;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.info-icon {
+    background: white;
+    color: #9273b8;
+    min-width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 21px;
+}
+
+.info-item h3 {
+    margin-bottom: 7px;
+    font-size: 17px;
+}
+
+.info-item p,
+.info-item a {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #6c6176;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+/* Contact Form */
+.contact-form {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 22px #30263c0d;
+}
+
+.contact-form > p {
+    color: #6c6176;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 9px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ded3eb;
+    border-radius: 6px;
+    background: #fdfbff;
+    color: #30263c;
+    outline: none;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #9273b8;
+    box-shadow: 0 0 0 2px #9273b81c;
+}
+
+.form-group textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    background: #9273b8;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #755598;
+}
+
+#form-message {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #755598;
+}
+
+/* FAQ */
+.faq {
+    background: #f0e9f8;
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+.faq details {
+    background: white;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.faq summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.faq details p {
+    color: #6c6176;
+    line-height: 1.8;
+    margin-top: 14px;
+}
+
+/* Footer */
+footer {
+    background: #30263c;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 35px 6%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 24px 20px;
+    }
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+    .faq h2 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+    <div class="logo">CLOTHING</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="shop.html">🛒</a>
+    </nav>
+</header>
+
+<!-- Page Introduction -->
+<section class="hero">
+    <h1>Get in <span>Touch</span></h1>
+    <p>
+        Have a question about an order, our products or your shopping
+        experience? We would love to hear from you.
+        Send us a message and let us help you.
+    </p>
+</section>
+
+<!-- Contact Details and Form -->
+<section class="contact-container">
+
+    <div class="contact-info">
+        <h2>Let's Talk!</h2>
+
+        <p>
+            Your experience matters to us. Reach out with your
+            questions, feedback or suggestions.
+        </p>
+
+        <div class="info-item">
+            <div class="info-icon">✉</div>
+            <div>
+                <h3>Email Us</h3>
+                <p>support@clothingstore.com</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-icon">☎</div>
+            <div>
+                <h3>Call Us</h3>
+                <p>+91 98765 43210</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-icon">⌖</div>
+            <div>
+                <h3>Our Location</h3>
+                <p>India</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="info-icon">◷</div>
+            <div>
+                <h3>Working Hours</h3>
+                <p>Monday – Saturday</p>
+                <p>10:00 AM – 6:00 PM</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h2>Send Us a Message</h2>
+
+        <p>
+            Fill out the form below and tell us how we can help.
+        </p>
+
+        <form id="contact-form">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" required>
+                        <option value="">Select a subject</option>
+                        <option>Order Enquiry</option>
+                        <option>Product Information</option>
+                        <option>Returns and Refunds</option>
+                        <option>Payment Issue</option>
+                        <option>Feedback</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea
+                    id="message"
+                    placeholder="Write your message here..."
+                    required></textarea>
+            </div>
+
+            <button type="submit" class="btn">
+                Send Message →
+            </button>
+
+            <p id="form-message" aria-live="polite"></p>
+
+        </form>
+    </div>
+
+</section>
+
+<!-- Frequently Asked Questions -->
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-container">
+
+        <details>
+            <summary>How can I track my order?</summary>
+            <p>
+                Once order tracking is connected to the store,
+                you can use your order details to check delivery status.
+                Contact customer support if you need assistance.
+            </p>
+        </details>
+
+        <details>
+            <summary>Can I return or exchange a product?</summary>
+            <p>
+                Return and exchange eligibility depends on the store's
+                return policy. Please contact customer support for help.
+            </p>
+        </details>
+
+        <details>
+            <summary>How can I get product information?</summary>
+            <p>
+                Visit our Shop page to explore the collection.
+                You can also send us a message with your product enquiry.
+            </p>
+        </details>
+
+        <details>
+            <summary>How do I contact customer support?</summary>
+            <p>
+                Use the contact form on this page or reach us using
+                the email and phone details provided above.
+            </p>
+        </details>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Clothing Store | Fashion Made for You</p>
+</footer>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    document.getElementById("form-message").textContent =
+        "Thank you for contacting us! This is a frontend demo. Your message has not been sent.";
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>

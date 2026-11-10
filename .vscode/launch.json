@@ -1,0 +1,122 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "PQ29",
+      "request": "launch",
+      "mainClass": "PQ29",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ28",
+      "request": "launch",
+      "mainClass": "PQ28",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ27",
+      "request": "launch",
+      "mainClass": "PQ27",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ26",
+      "request": "launch",
+      "mainClass": "PQ26",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ25",
+      "request": "launch",
+      "mainClass": "PQ25",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ24",
+      "request": "launch",
+      "mainClass": "PQ24",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ23",
+      "request": "launch",
+      "mainClass": "PQ23",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ22",
+      "request": "launch",
+      "mainClass": "PQ22",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ22Server",
+      "request": "launch",
+      "mainClass": "PQ22Server",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ21",
+      "request": "launch",
+      "mainClass": "PQ21",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ20",
+      "request": "launch",
+      "mainClass": "PQ20",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "PQ19",
+      "request": "launch",
+      "mainClass": "PQ19",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "CampusConnectAdmissionSystem",
+      "request": "launch",
+      "mainClass": "CampusConnectAdmissionSystem",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "dsa_759ce7fa"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/dsa/img/features/template",
+      "program": "c:/dsa/img/features/template/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

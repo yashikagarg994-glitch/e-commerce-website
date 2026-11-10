@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Clothing Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #faf7ff;
+            color: #30263c;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 6%;
+            border-bottom: 1px solid #e4d7f2;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #9273b8;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #30263c;
+            margin-left: 25px;
+            font-size: 18px;
+        }
+
+        nav a:hover,
+        nav .active {
+            color: #9273b8;
+        }
+
+        .shop-banner {
+            background: #eee5fa;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .shop-banner h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .shop-banner h1 span {
+            color: #9273b8;
+        }
+
+        .shop-banner p {
+            color: #6c6176;
+        }
+
+        .shop-section {
+            padding: 45px 6%;
+        }
+
+        .shop-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filters button {
+            background: white;
+            border: 1px solid #d7c7e9;
+            padding: 11px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #30263c;
+        }
+
+        .filters button.active,
+        .filters button:hover {
+            background: #9273b8;
+            color: white;
+        }
+
+        .cart-summary {
+            background: #eee5fa;
+            padding: 12px 18px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px #30263c0d;
+            transition: transform 0.25s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .category {
+            color: #9273b8;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info h3 {
+            margin: 10px 0;
+            font-size: 17px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .old-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 13px;
+            margin-left: 5px;
+            font-weight: normal;
+        }
+
+        .add-btn {
+            width: 100%;
+            padding: 12px;
+            background: #9273b8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .add-btn:hover {
+            background: #755598;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 60px;
+            color: #6c6176;
+            display: none;
+        }
+
+        footer {
+            background: #30263c;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 1000px) {
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+                font-size: 15px;
+            }
+
+            .shop-banner h1 {
+                font-size: 36px;
+            }
+
+            .product-card img {
+                height: 210px;
+            }
+
+            .product-grid {
+                gap: 12px;
+            }
+
+            .product-info {
+                padding: 12px;
+            }
+
+            .product-info h3 {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">CLOTHING</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#products">🛒</a>
+    </nav>
+</header>
+
+<section class="shop-banner">
+    <h1>Discover Your <span>Style</span></h1>
+    <p>Explore our latest collection of fashionable everyday essentials.</p>
+</section>
+
+<section class="shop-section" id="products">
+
+    <div class="shop-top">
+        <div class="filters">
+            <button class="active" data-category="All">All Products</button>
+            <button data-category="Women">Women</button>
+            <button data-category="Men">Men</button>
+            <button data-category="Accessories">Accessories</button>
+        </div>
+
+        <div class="cart-summary">
+            🛒 Cart: <span id="cart-count">0</span>
+            &nbsp;|&nbsp; ₹<span id="cart-total">0</span>
+        </div>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+
+        <article class="product-card" data-category="Women" data-price="1299">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=700&q=80" alt="Women's fashion dress">
+            <div class="product-info">
+                <span class="category">Women</span>
+                <h3>Elegant Summer Dress</h3>
+                <div class="price">₹1,299 <span class="old-price">₹1,799</span></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Men" data-price="999">
+            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=700&q=80" alt="Men's casual T-shirt">
+            <div class="product-info">
+                <span class="category">Men</span>
+                <h3>Classic Casual T-Shirt</h3>
+                <div class="price">₹999 <span class="old-price">₹1,299</span></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Women" data-price="1599">
+            <img src="https://images.unsplash.com/photo-1548624149-f3a2a1c6c2c5?auto=format&fit=crop&w=700&q=80" alt="Women's stylish outfit">
+            <div class="product-info">
+                <span class="category">Women</span>
+                <h3>Everyday Chic Outfit</h3>
+                <div class="price">₹1,599 <span class="old-price">₹2,099</span></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Accessories" data-price="699">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80" alt="Stylish handbag">
+            <div class="product-info">
+                <span class="category">Accessories</span>
+                <h3>Everyday Handbag</h3>
+                <div class="price">₹699 <span class="old-price">₹999</span></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Men" data-price="1799">
+            <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=700&q=80" alt="Men's fashion clothing">
+            <div class="product-info">
+                <span class="category">Men</span>
+                <h3>Modern Casual Jacket</h3>
+                <div class="price">₹1,799 <span class="old-price">₹2,299</span></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Accessories" data-price="499">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="Fashion wristwatch">
+            <div class="product-info">
+                <span class="category">Accessories</span>
+                <h3>Minimalist Watch</h3>
+                <div class="price">₹499 <span class="old-price">₹799</span></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Women" data-price="1199">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80" alt="Women's wardrobe essentials">
+            <div class="product-info">
+                <span class="category">Women</span>
+                <h3>Wardrobe Essentials</h3>
+                <div class="price">₹1,199 <span class="old-price">₹1,599</span></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Men" data-price="899">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80" alt="Basic men's T-shirt">
+            <div class="product-info">
+                <span class="category">Men</span>
+                <h3>Essential Cotton Tee</h3>
+                <div class="price">₹899 <span class="old-price">₹1,199</span></div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="empty" id="empty-message">
+        No products found in this category.
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Clothing Store | Fashion Made for You</p>
+</footer>
+
+<script>
+    const filterButtons = document.querySelectorAll(".filters button");
+    const products = document.querySelectorAll(".product-card");
+    const cartCount = document.getElementById("cart-count");
+    const cartTotal = document.getElementById("cart-total");
+    const emptyMessage = document.getElementById("empty-message");
+
+    let count = 0;
+    let total = 0;
+
+    // Filter products by category
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const category = button.dataset.category;
+            let visible = 0;
+
+            products.forEach(product => {
+                const show = category === "All" ||
+                             product.dataset.category === category;
+
+                product.style.display = show ? "block" : "none";
+
+                if (show) visible++;
+            });
+
+            emptyMessage.style.display = visible ? "none" : "block";
+        });
+    });
+
+    // Add products to the demo cart
+    document.querySelectorAll(".add-btn").forEach(button => {
+        button.addEventListener("click", () => {
+            const product = button.closest(".product-card");
+            const price = Number(product.dataset.price);
+
+            count++;
+            total += price;
+
+            cartCount.textContent = count;
+            cartTotal.textContent = total.toLocaleString("en-IN");
+
+            const originalText = button.textContent;
+            button.textContent = "✓ Added to Cart";
+
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 900);
+        });
+    });
+</script>
+
+</body>
+</html>

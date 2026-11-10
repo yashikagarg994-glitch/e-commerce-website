@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Clothing Store</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#faf7ff;color:#30263c}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 6%;border-bottom:1px solid #e4d7f2}
+.logo{font-size:25px;font-weight:bold;color:#9273b8}
+nav{display:flex;gap:25px;flex-wrap:wrap}
+nav a{text-decoration:none;color:#30263c;font-size:17px}
+nav a:hover,.active{color:#9273b8}
+.hero{text-align:center;background:#eee5fa;padding:85px 8%}
+.hero h1{font-size:48px;margin-bottom:20px}
+.hero h1 span{color:#9273b8}
+.hero p{max-width:700px;margin:auto;line-height:1.8;color:#6c6176}
+.story{display:flex;align-items:center;gap:45px;padding:70px 8%}
+.story img{width:48%;height:400px;object-fit:cover;border-radius:10px}
+.story-content{flex:1}
+.story h2{font-size:34px;margin-bottom:20px}
+.story p{line-height:1.9;color:#6c6176;margin-bottom:15px}
+.btn{display:inline-block;background:#9273b8;color:white;padding:14px 25px;border-radius:6px;text-decoration:none;margin-top:12px}
+.btn:hover{background:#755598}
+.values{text-align:center;background:#f0e9f8;padding:65px 7%}
+.values h2{font-size:34px;margin-bottom:35px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:white;padding:30px 20px;border-radius:10px}
+.card .icon{font-size:35px;color:#9273b8}
+.card h3{margin:15px 0;color:#9273b8}
+.card p{line-height:1.7;color:#6c6176}
+footer{background:#30263c;color:white;text-align:center;padding:25px;margin-top:40px}
+@media(max-width:700px){header{flex-direction:column;gap:20px}.hero h1{font-size:36px}.story{flex-direction:column}.story img{width:100%;height:300px}.cards{grid-template-columns:1fr}.story h2{font-size:29px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">CLOTHING</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="blog.html">Blog</a>
+<a href="about.html" class="active">About</a>
+<a href="contact.html">Contact</a>
+<a href="shop.html">🛒</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>About <span>Our Brand</span></h1>
+<p>Fashion is more than clothing. It is a way to express your personality, confidence and individuality. Welcome to our world of style, comfort and creativity.</p>
+</section>
+
+<section class="story">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Fashion shopping">
+<div class="story-content">
+<h2>Our Story</h2>
+<p>Our Clothing Store was created with a simple mission: to make fashionable, comfortable and affordable clothing accessible to everyone.</p>
+<p>We bring together modern trends and timeless designs so you can find outfits that match your lifestyle, whether you are dressing for college, work, parties or everyday moments.</p>
+<p>We believe everyone deserves to feel confident in what they wear. Your style is your story, and we are here to help you express it.</p>
+<a href="shop.html" class="btn">Explore Collection →</a>
+</div>
+</section>
+
+<section class="values">
+<h2>Why Choose Us?</h2>
+<div class="cards">
+<div class="card">
+<div class="icon">✦</div>
+<h3>Latest Trends</h3>
+<p>Discover fresh designs and fashionable outfits for every occasion.</p>
+</div>
+<div class="card">
+<div class="icon">♡</div>
+<h3>Quality & Comfort</h3>
+<p>Explore clothing selected with comfort, style and everyday wear in mind.</p>
+</div>
+<div class="card">
+<div class="icon">✧</div>
+<h3>Affordable Fashion</h3>
+<p>Find stylish options at prices that help you refresh your wardrobe.</p>
+</div>
+</div>
+<a href="shop.html" class="btn">Shop Now</a>
+</section>
+
+<footer>
+<p>© 2026 Clothing Store | Fashion Made for You</p>
+</footer>
+</body>
+</html>

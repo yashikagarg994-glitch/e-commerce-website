@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Blog | Clothing Store</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#faf7ff;color:#30263c}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 6%;border-bottom:1px solid #e4d7f2}
+.logo{font-size:25px;font-weight:bold;color:#9273b8}
+nav{display:flex;gap:25px;flex-wrap:wrap}
+nav a{text-decoration:none;color:#30263c;font-size:17px}
+nav a:hover,.active{color:#9273b8}
+.hero{text-align:center;padding:70px 7%;background:#eee5fa}
+.hero .tag{color:#9273b8;text-transform:uppercase;letter-spacing:3px;font-size:12px}
+.hero h1{font-size:48px;margin:18px 0}
+.hero h1 span{color:#9273b8}
+.hero p{color:#6c6176;line-height:1.8}
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;padding:55px 7%}
+.featured img{width:100%;height:350px;object-fit:cover;border-radius:10px}
+.label{color:#9273b8;font-size:12px;text-transform:uppercase;letter-spacing:2px}
+.featured h2{font-size:34px;margin:18px 0;line-height:1.25}
+.featured p,.article p{color:#6c6176;line-height:1.8;font-size:15px}
+.btn{display:inline-block;background:#9273b8;color:white;text-decoration:none;padding:13px 22px;border-radius:6px;margin-top:20px;border:none;cursor:pointer}
+.btn:hover{background:#755598}
+.blog-section{padding:30px 7% 70px}
+.section-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.section-top h2{font-size:32px}
+.filters{display:flex;gap:9px;flex-wrap:wrap}
+.filters button{padding:10px 15px;border:1px solid #d7c7e9;background:white;border-radius:5px;cursor:pointer;color:#30263c}
+.filters button.active,.filters button:hover{background:#9273b8;color:white}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.article{background:white;border-radius:10px;overflow:hidden;box-shadow:0 4px 18px #30263c0c}
+.article img{width:100%;height:230px;object-fit:cover;display:block}
+.article-content{padding:22px}
+.article h3{font-size:21px;margin:12px 0}
+.article p{font-size:14px}
+.read{display:inline-block;margin-top:17px;color:#9273b8;text-decoration:none;font-weight:bold}
+.read:hover{text-decoration:underline}
+.newsletter{background:#eee5fa;text-align:center;padding:55px 7%}
+.newsletter h2{font-size:32px;margin-bottom:15px}
+.newsletter p{color:#6c6176;line-height:1.8}
+.newsletter form{display:flex;max-width:450px;margin:25px auto 0;gap:8px}
+.newsletter input{flex:1;min-width:0;padding:14px;border:1px solid #d7c7e9;border-radius:5px}
+.newsletter .btn{margin:0}
+#message{margin-top:15px;font-size:14px}
+footer{background:#30263c;color:white;text-align:center;padding:25px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured{gap:22px}.featured h2{font-size:28px}}
+@media(max-width:600px){header{flex-direction:column;gap:20px}nav{justify-content:center;gap:14px}nav a{font-size:15px}.hero h1{font-size:36px}.featured{grid-template-columns:1fr;padding:35px 6%}.featured img{height:270px}.grid{grid-template-columns:1fr}.section-top h2{font-size:27px}.newsletter form{flex-direction:column}.newsletter .btn{padding:14px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">CLOTHING</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="blog.html" class="active">Blog</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="shop.html">🛒</a>
+</nav>
+</header>
+
+<section class="hero">
+<span class="tag">The Style Journal</span>
+<h1>Fashion, <span>Your Way.</span></h1>
+<p>Discover outfit inspiration, styling secrets and the latest fashion ideas.</p>
+</section>
+
+<section class="featured">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Fashion inspiration">
+<div>
+<span class="label">Featured Story · Style Guide</span>
+<h2>Build a Wardrobe That Feels Like You</h2>
+<p>Great style starts with understanding what makes you feel confident. Discover how to combine everyday essentials, your favourite colours and versatile pieces to create outfits that reflect your personality.</p>
+<a href="#articles" class="btn">Explore Articles →</a>
+</div>
+</section>
+
+<section class="blog-section" id="articles">
+<div class="section-top">
+<h2>Latest Stories</h2>
+<div class="filters">
+<button class="active" data-category="All">All</button>
+<button data-category="Trends">Trends</button>
+<button data-category="Styling">Styling Tips</button>
+<button data-category="Lifestyle">Lifestyle</button>
+</div>
+</div>
+
+<div class="grid" id="blog-grid">
+
+<article class="article" data-category="Trends">
+<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80" alt="Fashion wardrobe">
+<div class="article-content">
+<span class="label">Fashion Trends</span>
+<h3>5 Wardrobe Essentials Everyone Needs</h3>
+<p>Discover versatile clothing pieces that make everyday outfit planning easier and more stylish.</p>
+<a href="#story1" class="read" data-title="5 Wardrobe Essentials Everyone Needs" data-text="Start with a comfortable basic T-shirt, well-fitting jeans, a versatile jacket, a classic shirt and comfortable footwear. Choose colours that coordinate easily so you can create more outfits with fewer pieces.">Read Article →</a>
+</div>
+</article>
+
+<article class="article" data-category="Styling">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80" alt="Friends shopping for outfits">
+<div class="article-content">
+<span class="label">Styling Tips</span>
+<h3>How to Style Everyday Outfits</h3>
+<p>Learn simple ways to combine colours, layers and accessories to elevate your daily look.</p>
+<a href="#story2" class="read" data-title="How to Style Everyday Outfits" data-text="Build an outfit around one key piece. Add complementary colours, layer according to the weather and choose accessories that suit the occasion. Most importantly, wear combinations that make you feel comfortable and confident.">Read Article →</a>
+</div>
+</article>
+
+<article class="article" data-category="Lifestyle">
+<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=700&q=80" alt="Clothing store interior">
+<div class="article-content">
+<span class="label">Lifestyle</span>
+<h3>Shop Smarter, Dress Better</h3>
+<p>Make thoughtful shopping choices and find pieces you will enjoy wearing again and again.</p>
+<a href="#story3" class="read" data-title="Shop Smarter, Dress Better" data-text="Before buying something new, think about how it fits your wardrobe, lifestyle and budget. Check the fit, fabric and care instructions, and prioritise pieces you can style in several ways.">Read Article →</a>
+</div>
+</article>
+
+<article class="article" data-category="Trends">
+<img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=700&q=80" alt="Contemporary fashion look">
+<div class="article-content">
+<span class="label">Fashion Trends</span>
+<h3>Find Your Signature Style</h3>
+<p>Explore silhouettes, colours and outfit combinations that express your individuality.</p>
+<a href="#story4" class="read" data-title="Find Your Signature Style" data-text="Notice the colours and silhouettes you naturally reach for. Save outfit inspiration, experiment with different combinations and keep what feels authentic to you. Personal style develops with time and experimentation.">Read Article →</a>
+</div>
+</article>
+
+<article class="article" data-category="Styling">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80" alt="Fashion styling inspiration">
+<div class="article-content">
+<span class="label">Styling Tips</span>
+<h3>From Casual to Occasion Ready</h3>
+<p>Transform simple outfits with thoughtful layers, footwear and accessories.</p>
+<a href="#story5" class="read" data-title="From Casual to Occasion Ready" data-text="A simple outfit can feel more occasion-ready with a structured jacket, polished footwear, a statement accessory or a different bag. Choose one or two changes that complement the event rather than overcomplicating the look.">Read Article →</a>
+</div>
+</article>
+
+<article class="article" data-category="Lifestyle">
+<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80" alt="Carefully styled wardrobe">
+<div class="article-content">
+<span class="label">Lifestyle</span>
+<h3>Care for Clothes, Wear Them Longer</h3>
+<p>Simple wardrobe-care habits can help your favourite clothes stay in good condition.</p>
+<a href="#story6" class="read" data-title="Care for Clothes, Wear Them Longer" data-text="Read garment care labels, wash items according to fabric needs, avoid unnecessary washing and store clothes properly. Repairing small issues early can help you enjoy favourite pieces for longer.">Read Article →</a>
+</div>
+</article>
+
+</div>
+<div id="article-reader" style="display:none;background:white;padding:30px;margin-top:30px;border-radius:10px">
+<span class="label">The Style Journal</span>
+<h2 id="reader-title" style="margin:15px 0"></h2>
+<p id="reader-text" style="line-height:1.9;color:#6c6176"></p>
+<button class="btn" id="close-reader">Back to Articles</button>
+</div>
+</section>
+
+<section class="newsletter">
+<h2>Stay in Style ♡</h2>
+<p>Subscribe for fashion inspiration, styling tips and new stories.</p>
+<form id="subscribe-form">
+<input type="email" id="email" placeholder="Enter your email address" required>
+<button class="btn" type="submit">Subscribe</button>
+</form>
+<p id="message" aria-live="polite"></p>
+</section>
+
+<footer>
+<p>© 2026 Clothing Store | Fashion Made for You</p>
+</footer>
+
+<script>
+const filterButtons = document.querySelectorAll(".filters button");
+const articles = document.querySelectorAll(".article");
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        filterButtons.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+
+        const category = button.dataset.category;
+
+        articles.forEach(article => {
+            article.style.display =
+                category === "All" || article.dataset.category === category
+                ? "" : "none";
+        });
+    });
+});
+
+// Open a full article in the page
+document.querySelectorAll(".read").forEach(link => {
+    link.addEventListener("click", event => {
+        event.preventDefault();
+
+        document.getElementById("reader-title").textContent =
+            link.dataset.title;
+        document.getElementById("reader-text").textContent =
+            link.dataset.text;
+
+        document.getElementById("article-reader").style.display = "block";
+        document.getElementById("article-reader").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+});
+
+document.getElementById("close-reader").addEventListener("click", () => {
+    document.getElementById("article-reader").style.display = "none";
+    document.getElementById("articles").scrollIntoView({behavior:"smooth"});
+});
+
+// Demo newsletter form
+document.getElementById("subscribe-form").addEventListener("submit", event => {
+    event.preventDefault();
+    document.getElementById("message").textContent =
+        "Thank you for subscribing! This is a frontend demo; your email has not been saved.";
+    event.target.reset();
+});
+</script>
+
+</body>
+</html>
